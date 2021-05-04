@@ -44,7 +44,7 @@ const products = [
   },
   {
     id: '03',
-    title: 'trà đào ',
+    title: 'trà đào',
     price: '45.000 VND',
     imageUrl: 'https://otavietnam.com/wp-content/uploads/2020/04/tra-sua-bac-giang-7.jpg'
 
