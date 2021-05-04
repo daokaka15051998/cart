@@ -24,7 +24,6 @@ import {
   Button,
   FlatList,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 const { height, width } = Dimensions.get('window');
 
@@ -45,23 +44,23 @@ const products = [
   },
   {
     id: '03',
-    title: 'trà sữa toco',
+    title: 'trà đào ',
     price: '45.000 VND',
-    imageUrl: 'https://media1.nguoiduatin.vn/media/nhap-bai-qc/2018/11/09/tocotoco2.png'
+    imageUrl: 'https://otavietnam.com/wp-content/uploads/2020/04/tra-sua-bac-giang-7.jpg'
 
   },
   {
     id: '04',
     title: 'trà sữa toco',
     price: '50.000 VND',
-    imageUrl: 'https://media1.nguoiduatin.vn/media/nhap-bai-qc/2018/11/09/tocotoco2.png'
+    imageUrl: 'https://cdn-www.vinid.net/2020/09/8cb97047-tr%C3%A0-s%E1%BB%AFa-pozaa-tea-%C6%B0u-%C4%91%C3%A3i.jpg'
 
   },
   {
     id: '05',
     title: 'trà sữa toco',
     price: '40.000 VND',
-    imageUrl: 'https://media1.nguoiduatin.vn/media/nhap-bai-qc/2018/11/09/tocotoco2.png'
+    imageUrl: 'https://d1sag4ddilekf6.cloudfront.net/compressed/merchants/5-CZAKTANKLNNXRJ/hero/7a7b18bd0d2a48ae8cb145edc0ba6937_1615741564084754767.png'
 
   },
   {
@@ -76,7 +75,6 @@ const products = [
 const initialState = {
   count: 0
 };
-
 
 function reducer(state = initialState, action) {
 
@@ -106,21 +104,25 @@ const App = () => {
         <Text>{item.title}</Text>
         <Text>{item.price}</Text>
         <Icon name="shopping-cart" color="black" size={30} />
-        <Button title='Thêm vào Giỏ hàng' />
+        <Counter />
       </View>
     </View>
   );
 
   return (
-    <View style={styles.Container}>
-      <FlatList
-        data={products}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        numColumns={2}
-        contentContainerStyle={{ paddingBottom: 20, paddingTop: 20 }}
-      />
-    </View>
+    <Provider store={store} >
+      <View style={styles.Container}>
+        <FlatList
+          data={products}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          numColumns={2}
+          contentContainerStyle={{ paddingBottom: 20, paddingTop: 20 }}
+        />
+      </View>
+    </Provider>
+
+
   );
 };
 

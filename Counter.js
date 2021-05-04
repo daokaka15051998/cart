@@ -15,13 +15,12 @@ class Counter extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>{this.props.count}</Text>
-                <TouchableOpacity onPress={this.increment} style={styles.Cong} >
-                    <Text style={{ width: 50, height: 30, alignItems: 'center' }}>cong</Text>
+                <TouchableOpacity onPress={this.increment} style={styles.CongTru} >
+                    <Text style={{ width: 50, height: 20, }}>+</Text>
                 </TouchableOpacity>
-                <Text></Text>
-                <TouchableOpacity onPress={this.decrement} style={styles.Cong} >
-                    <Text style={{ width: 50, height: 30, alignItems: 'center' }}>tru</Text>
+                <Text>Số Lượng : {this.props.count}</Text>
+                <TouchableOpacity onPress={this.decrement} style={styles.Tru} >
+                    <Text style={{ width: 50, height: 20, }}>-</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -30,15 +29,21 @@ class Counter extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: 'pink',
         flex: 2,
         justifyContent: "center",
         paddingHorizontal: 10,
         alignItems: 'center',
-        paddingBottom: 20
     },
     Cong: {
-        backgroundColor: 'red',
         borderColor: 'black',
+        fontSize: 20,
+        paddingLeft: 10,
+    },
+    Tru: {
+        borderColor: 'black',
+        fontSize: 20,
+        paddingLeft: 10,
     }
 });
 
